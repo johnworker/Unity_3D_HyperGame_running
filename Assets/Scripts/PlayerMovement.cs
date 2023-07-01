@@ -23,6 +23,6 @@ public class PlayerMovement : MonoBehaviour
         // width:1080-540/540 = 1        螢幕的右邊緣
         float finalXPos = Mathf.Clamp(xPos * limitValue, -limitValue, limitValue);
 
-        playerTransform.localPosition = new Vector3(finalXPos, 1, 0);
+        playerTransform.localPosition = new Vector3(finalXPos, 0, 0);
     }
 }
