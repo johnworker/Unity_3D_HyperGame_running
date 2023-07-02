@@ -6,8 +6,13 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Vector3 maxPosition;
     [SerializeField, Range(0,1)] private float progress;
 
-    private void Update()
+    private void Awake()
     {
-        transform.position = Vector3.Lerp(initialPosition, maxPosition, progress);
+        transform.localPosition = initialPosition;
+    }
+
+    private void LateUpdate()
+    {
+        transform.localPosition = Vector3.Lerp(initialPosition, maxPosition, progress);
     }
 }
